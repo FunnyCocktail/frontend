@@ -1,0 +1,19 @@
+.jc-sb{
+    justify-content: space-between;
+}
+
+.alit-cen{
+    align-items: center;
+}
+
+.ds-fl{
+    display: flex;
+}
+
+.ds-fl-c{
+    flex-direction: column;
+}
+
+.ds-fl-row{
+    flex-direction: row;
+}

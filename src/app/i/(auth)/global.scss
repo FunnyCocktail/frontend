@@ -1,0 +1,16 @@
+.place{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 90vh;
+    &__link{
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 600;
+        transition: .2s linear;
+        &:hover{
+            color: var(--dark_pink);
+        }
+    }
+}

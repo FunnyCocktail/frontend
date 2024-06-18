@@ -1,0 +1,14 @@
+.button{
+    background-color: var(--pink);
+    font-weight: bold;
+    color: var(--white);
+    padding: 10px 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+    transition: .2s linear;
+    &:hover{
+        background-color: var(--dark_pink);
+    }
+}

@@ -1,0 +1,13 @@
+.form{
+    border: 3px solid var(--gray);
+    background-color: var(--white);
+    border-radius: 20px;
+    width: 500px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px 0;
+}

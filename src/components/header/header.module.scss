@@ -1,0 +1,28 @@
+.header{
+    justify-content: space-between;
+    padding-top: 15px;
+    &__links{
+        list-style: none;
+        display: flex;
+        gap: 10px;
+    }
+    &__link{
+        font-size: 25px;
+        color: var(--black);
+        text-decoration: none;
+        font-weight: bold;
+        transition: .2s linear;
+        &:hover{
+            color: var(--pink);
+        }
+    }
+    &__buttons{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+.active{
+    color: var(--pink);
+}

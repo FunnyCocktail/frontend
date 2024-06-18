@@ -1,0 +1,13 @@
+.input{
+    padding: 10px 20px;
+    min-width: 300px;
+    outline: none;
+    border: 3px solid var(--gray);
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: 500;
+    transition: .2s linear;
+    &:focus{
+        border: 3px solid var(--dark_pink);
+    }
+}
