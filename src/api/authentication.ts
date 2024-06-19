@@ -14,12 +14,20 @@ class Authentication {
             username: username,
             email: username,
             password: password
-        })
+        });
+    forgotPassword = async(email:string) =>
+        await api.post(Constants.URL_API + `authentication-sending/forgot-password?data=${email}`);
+    updatePassword = async(email:string, newData: {code:string, password:string}) =>
+        await api.post(Constants.URL_API + 'authentication-confirm/update-password', {
+            email: email,
+            code: newData.code,
+            newData: newData.password
+        });
     async getUserClaims(){
         const token = JWTService.getTokenByType("refresh");
         if (token){
             const response = await 
-                api.get(Constants.URL_API + `authentication/get-user/${token}/refresh`);
+                api.post(Constants.URL_API + `authentication/get-user/${token}/refresh`);
             return response.data;
         }
     }

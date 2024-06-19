@@ -1,7 +1,7 @@
 const getTokenByType = (type:string) => {
     const hasToken = localStorage.getItem('_tokens');
     if (hasToken == null) return null;
-    else JSON.parse(hasToken)[`${type}Token`];
+    else return JSON.parse(hasToken)[`${type}Token`];
 };
 
 const checkUserToken = () => {
