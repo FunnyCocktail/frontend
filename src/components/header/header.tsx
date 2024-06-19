@@ -1,16 +1,24 @@
 'use client'
 import { Constants } from '@/constants'
-import styles from './header.module.scss'
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LinkButton } from '../common/buttons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { JWTService } from '@/services/jwt.service';
+import styles from './header.module.scss'
+import Link from 'next/link';
 
 const Header = () => {
     const pathname = usePathname();
     const links = Constants.Links;
 
     const [isAuth, setIsAuth] = useState(false);
+
+    useEffect(() => {
+        const checkAuth = setInterval(() => {
+            setIsAuth(JWTService.checkUserToken())
+        }, 1000);
+        return () => clearInterval(checkAuth);
+    }, [])
 
     return(
         <>
@@ -25,7 +33,7 @@ const Header = () => {
             ))}
             </ul>
             <div className={`${styles.header__buttons}`}>
-                {isAuth ? <h1>Профиль</h1> : <LinkButton placeholder='Вход в аккаунт' link='/i/sign-in'/>}
+                {isAuth ? <LinkButton placeholder='Профиль' link='/i/profile'/> : <LinkButton placeholder='Вход в аккаунт' link='/i/sign-in'/>}
             </div>
         </nav>
         </>

@@ -1,20 +1,27 @@
 'use client'
 import { DataInput } from '@/components/common/inputs'
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { AcceptButton } from '@/components/common/buttons'
 import { Form } from '@/components/common/form'
 import { Authentication as AuthenticationApi } from '@/api'
+import { JWTService } from '@/services/jwt.service'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import '../global.scss'
 import toast from 'react-hot-toast'
 
 const Page = () => {
+    const router = useRouter();
     const authenticationApi = new AuthenticationApi();
     const [user, setUser] = useState({
         username: '',
         email: '',
         password: ''
     });
+
+    useEffect(() => {
+        if(JWTService) { router.push('profile') }
+    }, [])
 
     const inputChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;

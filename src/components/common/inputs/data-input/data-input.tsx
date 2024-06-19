@@ -2,8 +2,8 @@ import { FC } from "react"
 import styles from './data-input.module.scss'
 
 type PropTypes = {
-    name:string,
-    value:string,
+    name?:string,
+    value?:string,
     placeholder:string,
     type:string,
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
