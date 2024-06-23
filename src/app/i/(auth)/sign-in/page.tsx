@@ -20,7 +20,7 @@ const Page = () => {
     });
 
     useEffect(() => {
-        if(JWTService) { router.push('profile') }
+        if(JWTService.checkUserToken()) router.push('profile')
     }, [])
 
     const inputChange = (e:ChangeEvent<HTMLInputElement>) => {

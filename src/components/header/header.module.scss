@@ -4,7 +4,7 @@
     &__links{
         list-style: none;
         display: flex;
-        gap: 10px;
+        gap: 20px;
     }
     &__link{
         font-size: 25px;
@@ -27,5 +27,29 @@
     color: var(--pink);
 }
 
+.mobile{
+    display: none;
+    margin-top: 20px;
+    width: 100vw;
+    padding: 0 10px;
+    &__nav{
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: space-between;
+        &__link{
+            &__img{
+                max-width: 40px;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 530px) {
+    .header{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
 }

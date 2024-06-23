@@ -1,0 +1,54 @@
+.place{
+    flex-direction: column;
+    &__name{
+        margin-bottom: 10px;
+    }
+    &__main_info{
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        &__image{
+            width: 800px;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        &__data{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            &__rating{
+                display: flex;
+                align-items: center;
+                gap: 30px;
+	            -webkit-tap-highlight-color: transparent;
+                & input {
+                    all: unset;
+                    color: var(--pink);
+                    cursor: pointer;
+                    font-size: 4rem;
+                    line-height: 1;
+                    inline-size: 1em;
+                    block-size: 1em;
+                    &::after {
+                        transition: 
+                            color 300ms,
+                            -webkit-text-stroke-color 300ms,
+                            scale 500ms cubic-bezier(0.5, -4, 0.5, 4)
+                        ;	
+                        content: '★';
+                        display: block;
+                        -webkit-text-stroke-width: 1px;
+                          -webkit-text-stroke-color: var(--pink);
+                    }
+                    &:is(input:indeterminate, input:checked ~ input:not(:checked))::after{
+                        // content: '☆';
+                        -webkit-text-stroke-color: #aaa;
+                        color: #ccc;
+                        scale: .8;
+                    }
+                }
+            }
+        }
+    }
+}

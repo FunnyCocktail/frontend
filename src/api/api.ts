@@ -10,7 +10,7 @@ const instance = axios.create({
 instance.interceptors.request.use(
     cfg => {
         const token = JWTService.getTokenByType("access");
-        if (token) cfg.headers['Authorization'] = `Bearer ${token}`
+        if (token) cfg.headers['Authorization'] = `Bearer ${token.toString()}`
 
         return cfg;
     },
