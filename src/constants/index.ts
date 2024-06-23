@@ -1,3 +1,7 @@
+import homeSvg from '@/assets/svgs/home.svg'
+import cocktailSvg from '@/assets/svgs/cocktail.svg'
+import faqSvg from '@/assets/svgs/faq.svg'
+
 const production = process.env.NODE_ENV === 'production';
 const URL_API = production 
     ? 'not'
@@ -6,17 +10,20 @@ const Links = [
     {
         id: 1,
         text: 'Главная',
-        link: '/'
+        link: '/',
+        svg: homeSvg
     },
     {
         id: 2,
         text: 'Коктейли',
-        link: '/cocktails'
+        link: '/cocktails',
+        svg: cocktailSvg
     },
     {
         id: 3,
         text: 'F.A.Q',
-        link: '/faq'
+        link: '/faq',
+        svg: faqSvg
     }
 ];
 

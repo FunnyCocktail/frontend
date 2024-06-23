@@ -1,0 +1,30 @@
+.place{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    &__author{
+        max-width: 300px;
+                min-width: 100px;
+                align-items: center;
+                justify-content: flex-start;
+                display: flex;
+                gap: 20px;
+                display: flex;
+                background-color: var(--white);
+                padding: 5px 10px;
+                user-select: none;
+                transition: .2s linear;
+                &:hover{
+                    background-color: var(--gray);
+                    cursor: pointer;
+                }
+                border-radius: 15px;
+                &__image{
+                    width: 70px;
+                    height: 70px;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 100%;
+                }
+    }
+}

@@ -36,6 +36,18 @@ const Header = () => {
                 {isAuth ? <LinkButton placeholder='Профиль' link='/i/profile'/> : <LinkButton placeholder='Вход в аккаунт' link='/i/sign-in'/>}
             </div>
         </nav>
+        <nav className={`${styles.mobile}`}>
+            <ul className={`${styles.mobile__nav}`}>
+                {links.map(link => (
+                    <li key={link.id}>
+                        <Link className={pathname == link.link ? `${styles.mobile__nav__link}` : `${styles.mobile__nav__link}`}
+                        href={link.link}>
+                            <img className={`${styles.mobile__nav__link__img}`} src={link.svg.src} alt="photo" />
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </nav>
         </>
     )
 }

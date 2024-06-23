@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Open_Sans } from "next/font/google";
-import '@/assets/styles/main.css'
-import '@/assets/styles/styles.css'
 import { Toaster } from "react-hot-toast";
 import { Header } from "@/components/header";
+import '@/assets/styles/main.css'
+import '@/assets/styles/styles.css'
 
 const inter = Inter({ subsets: ["latin"] });
 const openSans = Open_Sans({subsets: ["cyrillic"]})
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body className={openSans.className}>
         <Header/>
         {children}
